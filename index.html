@@ -2,106 +2,457 @@
 <!DOCTYPE html>
 <html lang="su">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lembur Swara</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: white;
-      text-align: center;
-    }
+<title>Lembur Swara</title>
 
-    header {
-      padding: 70px 20px;
-      background: linear-gradient(135deg, #171717, #3b2a16);
-    }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-    h1 {
-      margin: 0;
-      font-size: 52px;
-      letter-spacing: 4px;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    .subtitle {
-      margin-top: 15px;
-      font-size: 20px;
-      color: #d8b56a;
-    }
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0b0b;
+    color: #f5f5f5;
+}
 
-    main {
-      padding: 50px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
+/* HERO */
 
-    h2 {
-      color: #d8b56a;
-    }
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
 
-    p {
-      font-size: 18px;
-      line-height: 1.7;
-      color: #ddd;
-    }
+    background:
+        radial-gradient(circle at center, #4b3518 0%, #171109 45%, #050505 100%);
+}
 
-    .menu {
-      margin-top: 40px;
-    }
+.hero-content {
+    max-width: 900px;
+}
 
-    .menu a {
-      display: inline-block;
-      margin: 8px;
-      padding: 14px 25px;
-      background: #6b4a20;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-    }
+.hero h1 {
+    font-size: clamp(48px, 9vw, 100px);
+    letter-spacing: 10px;
+    margin: 0;
+    font-weight: 800;
+}
 
-    footer {
-      margin-top: 50px;
-      padding: 25px;
-      background: #080808;
-      color: #aaa;
-    }
-  </style>
+.hero .line {
+    width: 120px;
+    height: 3px;
+    background: #c99a45;
+    margin: 25px auto;
+}
+
+.hero p {
+    font-size: clamp(18px, 3vw, 27px);
+    color: #d8bd86;
+    letter-spacing: 2px;
+}
+
+.hero small {
+    display: block;
+    margin-top: 20px;
+    color: #aaa;
+    font-size: 15px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 15px 32px;
+    border: 1px solid #c99a45;
+    border-radius: 30px;
+    color: #fff;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.button:hover {
+    background: #c99a45;
+    color: #111;
+}
+
+
+/* SECTION */
+
+section {
+    padding: 90px 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+    margin-bottom: 10px;
+    color: #d8bd86;
+}
+
+.section-title p {
+    color: #999;
+}
+
+
+/* CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    padding: 35px 25px;
+    border: 1px solid #3b301f;
+    background: linear-gradient(145deg, #18140e, #0e0e0e);
+    border-radius: 14px;
+    text-align: center;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #c99a45;
+}
+
+.card .icon {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    color: #d8bd86;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #aaa;
+    line-height: 1.7;
+}
+
+
+/* ABOUT */
+
+.about {
+    background: #111;
+}
+
+.about-text {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    color: #bbb;
+    line-height: 1.9;
+    font-size: 18px;
+}
+
+
+/* QUOTE */
+
+.quote {
+    text-align: center;
+    padding: 110px 20px;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.65),
+            rgba(0,0,0,.85)
+        ),
+        radial-gradient(circle, #634b24, #080808 70%);
+}
+
+.quote h2 {
+    font-size: clamp(30px, 5vw, 55px);
+    color: #e0c58d;
+    margin: 0;
+}
+
+.quote p {
+    color: #aaa;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #050505;
+    color: #777;
+    font-size: 14px;
+}
+
+footer strong {
+    color: #c99a45;
+}
+</style>
 </head>
+
 
 <body>
 
-  <header>
-    <h1>LEMBUR SWARA</h1>
-    <div class="subtitle">Ngamumule Swara, Ngajaga Budaya</div>
-  </header>
 
-  <main>
-    <h2>Wilujeng Sumping</h2>
+<!-- HERO -->
 
-    <p>
-      Lembur Swara mangrupikeun rohangan pikeun musik,
-      budaya, seni, sareng carita ti lembur urang.
-    </p>
+<header class="hero">
 
-    <p>
-      Ngahijikeun sora tradisi sareng kreativitas kiwari,
-      pikeun ngajaga warisan budaya tetep hirup dina jaman anyar.
-    </p>
+    <div class="hero-content">
 
-    <div class="menu">
-      <a href="#">Musik</a>
-      <a href="#">Budaya</a>
-      <a href="#">Seniman</a>
-      <a href="#">Carita Lembur</a>
+        <h1>LEMBUR SWARA</h1>
+
+        <div class="line"></div>
+
+        <p>
+            Ngamumule Swara • Ngajaga Budaya • Ngahijikeun Rasa
+        </p>
+
+        <small>
+            Rohangan digital pikeun musik, seni jeung budaya Sunda.
+        </small>
+
+        <a href="#musik" class="button">
+            MULAI NGAREGEPKEUN
+        </a>
+
     </div>
-  </main>
 
-  <footer>
+</header>
+
+
+
+<!-- MUSIK -->
+
+<section id="musik">
+
+<div class="container">
+
+<div class="section-title">
+
+    <h2>Musik</h2>
+
+    <p>
+        Rupa-rupa warna sora anu hirup tina tradisi jeung kreativitas.
+    </p>
+
+</div>
+
+
+<div class="cards">
+
+    <div class="card">
+
+        <div class="icon">🎵</div>
+
+        <h3>Pop Sunda</h3>
+
+        <p>
+            Lagu Sunda dina rupa-rupa gaya jeung generasi.
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="icon">🎶</div>
+
+        <h3>Calung</h3>
+
+        <p>
+            Sora awi anu jadi bagian penting tina kasenian Sunda.
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="icon">🎻</div>
+
+        <h3>Kacapi Suling</h3>
+
+        <p>
+            Harmoni lemes pikeun ngaregepkeun rasa jeung suasana.
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="icon">🥁</div>
+
+        <h3>Degung</h3>
+
+        <p>
+            Gamelan Sunda kalayan warna sora anu khas.
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- SENIMAN -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+    <h2>Seniman</h2>
+
+    <p>
+        Ngenalkeun jalma-jalma anu ngajaga sora budaya tetep hirup.
+    </p>
+
+</div>
+
+
+<div class="cards">
+
+    <div class="card">
+
+        <div class="icon">🎙️</div>
+
+        <h3>Seniman Sunda</h3>
+
+        <p>
+            Profil jeung karya seniman ti rupa-rupa generasi.
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="icon">🎼</div>
+
+        <h3>Karya Musik</h3>
+
+        <p>
+            Kumpulan lagu, album jeung karya musik Sunda.
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="icon">🎬</div>
+
+        <h3>Video</h3>
+
+        <p>
+            Dokumentasi musik, seni jeung kahirupan budaya.
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- BUDAYA -->
+
+<section class="about">
+
+<div class="container">
+
+<div class="section-title">
+
+    <h2>Budaya</h2>
+
+    <p>
+        Sora henteu ngan saukur kadéngé, tapi ogé nyimpen carita.
+    </p>
+
+</div>
+
+
+<div class="about-text">
+
+    <p>
+        <strong>Lembur Swara</strong> nyaéta rohangan digital
+        pikeun ngumpulkeun, ngawanohkeun jeung ngamumulé
+        rupa-rupa sora budaya, hususna budaya Sunda.
+    </p>
+
+    <p>
+        Ti musik, rumpaka, kasenian, carita lembur,
+        nepi ka gagasan anyar anu lahir tina jaman kiwari.
+    </p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- QUOTE -->
+
+<section class="quote">
+
+    <h2>“Swara téh tapak rasa.”</h2>
+
+    <p>
+        Sora bisa leungit dina waktu, tapi rasa anu ditinggalkeun
+        bisa terus hirup.
+    </p>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <strong>LEMBUR SWARA</strong>
+
+    <br><br>
+
+    Ngamumule Swara • Ngajaga Budaya • Ngahijikeun Rasa
+
+    <br><br>
+
     © 2026 Lembur Swara
-  </footer>
+
+</footer>
+
 
 </body>
 </html>
